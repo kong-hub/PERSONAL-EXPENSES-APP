@@ -53,12 +53,12 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            color: Colors.green,
-            child: Text(
-              'List of TX',
-              textAlign: TextAlign.center,
-            ),
+          Column(
+            children: transactions.map((transaction) {
+              return Card(
+                child: Text(transaction.title),
+              );
+            }).toList(),
           ),
         ],
       ),
