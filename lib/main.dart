@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final titleInputController = TextEditingController();
+  final amoutInputController = TextEditingController();
+  String amountInput;
   final List<Transaction> transactions = [
     Transaction(
       id: 't1',
@@ -62,12 +65,17 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(labelText: 'Title'),
+                    controller: titleInputController,
                   ),
                   TextField(
                     decoration: InputDecoration(labelText: 'Amount'),
+                    controller: amoutInputController,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleInputController.text);
+                      print(amoutInputController.text);
+                    },
                     child: Text('Add Transaction'),
                   ),
                 ],
