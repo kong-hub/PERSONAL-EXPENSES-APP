@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final titleInputController = TextEditingController();
   final amoutInputController = TextEditingController();
-  String amountInput;
   final List<Transaction> transactions = [
     Transaction(
       id: 't1',
