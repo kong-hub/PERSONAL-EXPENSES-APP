@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class NewTransaction extends StatelessWidget {
   final titleInputController = TextEditingController();
   final amoutInputController = TextEditingController();
+  final Function addTransaction;
+
+  NewTransaction(this.addTransaction);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,10 @@ class NewTransaction extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                print(titleInputController.text);
-                print(amoutInputController.text);
+                addTransaction(
+                  titleInputController.text,
+                  double.parse(amoutInputController.text),
+                );
               },
               child: Text('Add Transaction'),
             ),
